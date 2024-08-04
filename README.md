@@ -6,7 +6,6 @@ This is a simple personal portfolio made by and for Alvin Wong. It is a modified
 
 This portfolio showcases my projects, skills, and experience. It is built using the DevFolio Bootstrap template, which has been customized to suit my needs.
 
-
 ## License
 
 The original template is provided by BootstrapMade.com under their license terms. Please refer to the [BootstrapMade License](https://bootstrapmade.com/license/) for more details.
