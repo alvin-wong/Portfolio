@@ -676,15 +676,17 @@ section,
 
 .hero img {
   position: absolute;
-  top: 0;
-  right: 0; 
-  width: 50%; 
-  height: 100%; 
   object-fit: cover;
-  object-position: 0% 20%; 
+  top: 0;
+  right: 0;
+  width: 52.6%; 
+  height: 100%; 
+  object-position: 40% 20%; 
   z-index: 1;
+  justify-content: center;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
+
 
 .hero:before {
   content: "";
