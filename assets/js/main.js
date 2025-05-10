@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const targetId = link.getAttribute('href').slice(1);
