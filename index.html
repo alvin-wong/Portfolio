@@ -49,14 +49,24 @@
 
 <body class="index-page">
   <main class="main">
+    <nav id="header" class="navbar">
+      <div class="logo">Alvin</div>
+      <ul class="nav-links">
+        <li><a href="#home"    class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-img.png" alt="Alvin Wong" data-aos="fade-in">
-
+    <section id="home" class="hero section dark-background">
+      <img src="assets/img/hero-img.jpg" alt="Alvin Wong" data-aos="fade-in">
+      <div class="overlay"></div>
       <div class="container d-flex flex-column align-items-start justify-content-center text-left" data-aos="fade-up" data-aos-delay="100">
         <h2>Alvin Wong</h2>
-        <p><span class="typed" data-typed-items="Full-Stack Dev,Innovator,ML Engineer,Researcher"></span></p>
+        <p><span class="typed" data-typed-items="Machine Learning Engineer, Computer Vision Researcher, Artifical Intelligence Educator, Full Stack Developer"></span></p>
         <button style="margin:60px 0px 0px 0px; font-weight:bold" type="button" class="btn btn-outline-light btn-lg" id="scrollButton">Enter Site</button>
 
       </div>
@@ -70,13 +80,11 @@
             <div class="about-me">
               <h4>About me</h4>
               <p>
-                Hi there! My name is Alvin Wong, and I am currently a student at the University of Florida, majoring in Computer Science and Mathematics. 
-                I'm a software developer with a passion for building accessible, human-centered products.
-                I love building things that make a difference in people's lives, whether it be videogames, productivity tools, or websites!
-              </p>
-              <p>
-                My experience spans full-stack web development, machine learning, and AI engineering, enabling me to design and implement comprehensive solutions.
-                If you have any questions, feel free to contact me at the bottom of this web page!
+                Hi there! My name is Alvin Wong, and I am currently a student at the University of Florida, majoring in Computer Science 
+                and Mathematics. I'm a software developer with a passion for advancing applied machine learning and building accessible, 
+                human-centered products. I love building software that applies machine learning techniques to solve real-world problems 
+                and I'm always excited about projects that have a positive impact on people's lives!
+                If you have any questions, feel free to contact me!
               </p>
             </div>
           </div>
@@ -84,134 +92,161 @@
       </div>
     </section><!-- End About Section -->
 
-    <section class="wrapper align-center section"> <!-- Picture Gallery Section-->
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>Highlights</h2>
-      </div><!-- End Section Title -->
-
-      <!-- Gallery -->
-        <div class="gallery style1 medium lightbox onscroll-fade-in">
-          <article>
-            <a href="assets\img\gallery\elt-presentation.jpg" class="image">
-              <img src="assets\img\gallery\elt-presentation.jpg" alt="Alvin Wong" />
-            </a>
-            <div class="caption">
-              <h3>Pitch to JTA Executive Leadership Team</h3>
-            </div>
-          </article>
-          <article>
-            <a href="assets\img\gallery\iot-winner.jpg" class="image">
-              <img src="assets\img\gallery\iot-winner.jpg" alt="Alvin Wong" />
-            </a>
-            <div class="caption">
-              <h3>1st Place at UF IoT Design Competition</h3>
-            </div>
-          </article>
-          <article>
-            <a href="assets\img\gallery\halloween-event.jpg" class="image">
-              <img src="assets\img\gallery\halloween-event.jpg" alt="Alvin Wong" />
-            </a>
-            <div class="caption">
-              <h3>Hosted Police at UF Halloween Escape Room</h3>
-            </div>
-          </article>
-        </div>
-    </section> <!-- End Picture Gallery Section-->
-
-
     <!-- Services Section -->
     <section id="services" class="services section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Milestones</h2>
+        <h2>Milestones & Achievements</h2>
       </div><!-- End Section Title -->
 
       <div class="container">
-
         <div class="row gy-4">
 
+          <!-- Start Service Item -->
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-cursor"></i>
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/gatorai.jpg');
+                --bg-darkness: 0;
+                --bg-scale: 1.2;
+                --bg-x: 0%;
+                --bg-y:  -10%;
+                "
+            >
+              <div class="icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+              <div class="text-overlay">
+                <a href="https://linktr.ee/thegaitorclub" class="stretched-link">
+                  <h3>Director of Education</h3>
+                </a>
+                <p style="font-weight:bold">April 2025</p>
+                <p>Elected as Director of Education for the Executive Board of Gator AI.</p>
               </div>
-              <a href="https://headstarter.co/" class="stretched-link">
-                <h3>Headstarter AI Fellowship</h3>
-              </a>
-              <p style="font-weight:bold">July 2024</p>
-              <p>Joined the Headstarter program to create 5 AI related projects with a final goal of $1000 raised or 1000 users.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+          <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-trophy"></i>
+          <!-- Start Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/ai_scholar.png');
+                --bg-darkness: 0;
+                --bg-scale: 1;
+                --bg-x: 0%;
+                --bg-y:  0%;
+                "
+            >
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <div class="text-overlay">
+                <a href="https://ai.ufl.edu/for-our-students/ai-scholars/" class="stretched-link">
+                  <h3>AI Research Scholar</h3>
+                </a>
+                <p style="font-weight:bold">April 2025</p>
+                <p>Awarded a $1750 stipend to research patient anonymization using GAN and diffusion models.</p>
               </div>
-              <a href="https://iot.institute.ufl.edu/iot-students-club/events/iot-design-competition-2023/" class="stretched-link">
-                <h3>UF IoT Competition</h3>
-              </a>
-              <p style="font-weight:bold">April 2024</p>
-              <p>Placed 1st in the UF IoT Design Competition with our Nagamasou project, receiving $2000 in prize money.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+          <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-person-gear"></i>
+          <!-- Start Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/iot_competition.jpg');
+                --bg-darkness: 0;
+                --bg-scale: 1;
+                --bg-x: 0%;
+                --bg-y:  0%;
+                "
+            >
+              <div class="icon"><i class="bi bi-cpu"></i></div>
+              <div class="text-overlay">
+                <a href="https://iot.institute.ufl.edu/iot-students-club/events/iot-design-competition-2023/" class="stretched-link">
+                  <h3>UF IoT Competition</h3>
+                </a>
+                <p style="font-weight:bold">April 2024</p>
+                <p>Placed 1st in the UF IoT Design Competition with the Nagamasou project, receiving $2000 in prize money.</p>
               </div>
-              <a href="https://www.jtafla.com/work-with-jta/" class="stretched-link">
-                <h3>First Internship</h3>
-              </a>
-              <p style="font-weight:bold">April 2024</p>
-              <p>Accepted my first internship at the Jacksonville Transportation Authority as as a Data Engineer .</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+          <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-search"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>UF Research Scholar</h3>
-              </a>
-              <p style="font-weight:bold">April 2024</p>
-              <p>Received a $1750 scholarship for ML research on transportation mode classification using cellular data.</p>
-              <a href="https://cur.aa.ufl.edu/programs-university-scholars-program/" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-layers"></i>
+          <!-- Start Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/jta.jpg');
+                --bg-darkness: 0;
+                --bg-scale: 1;
+                --bg-x: 0%;
+                --bg-y:  0%;
+                "
+            >
+              <div class="icon"><i class="bi bi-person-gear"></i></div>
+              <div class="text-overlay">
+                <a href="https://go.jtafla.com/internship/" class="stretched-link">
+                  <h3>First Internship</h3>
+                </a>
+                <p style="font-weight:bold">April 2024</p>
+                <p>Accepted my first internship at the Jacksonville Transportation Authority as as a Data Engineer.</p>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>First Full-Stack Website</h3>
-              </a>
-              <p style="font-weight:bold">January 2024</p>
-              <p>Completed a full-stack website &#40;MERN&#41; stack that allows users to share recipes, calculate and track calories.</p>
-              <a href="https://github.com/alvinwonggg/CalorieCounter-Buddy/tree/main" class="stretched-link"></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+          <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-people"></i>
+          <!-- Start Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/ursp.png');
+                --bg-darkness: 0;
+                --bg-scale: 1;
+                --bg-x: 0%;
+                --bg-y:  0%;
+                "
+            >
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <div class="text-overlay">
+                <a href="assets/img/milestones/paper.pdf" class="stretched-link">
+                  <h3>UF Research Scholar</h3>
+                </a>
+                <p style="font-weight:bold">April 2024</p>
+                <p>First authored a study on travel mode inference using traditional ML models on large, sparse datasets.</p>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Resident Assistant</h3>
-              </a>
-              <p style="font-weight:bold">August 2023</p>
-              <p>Became a resident assistant at UF, creating events to encourage community bonding.</p>
-              <a href="https://housing.ufl.edu/resident-assistant/" class="stretched-link"></a>
             </div>
-          </div><!-- End Service Item -->
+          </div>
+          <!-- End Service Item -->
+          
+          <!-- Start Service Item -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-item position-relative"
+              style="
+                --bg-image: url('/assets/img/milestones/resident_assistant.jpg');
+                --bg-darkness: 0;
+                --bg-scale: 1;
+                --bg-x: 0%;
+                --bg-y:  0%;
+                "
+            >
+              <div class="icon"><i class="bi bi-people"></i></div>
+              <div class="text-overlay">
+                <a href="https://housing.ufl.edu/resident-assistant/" class="stretched-link">
+                  <h3>Resident Assistant</h3>
+                </a>
+                <p style="font-weight:bold">August 2023</p>
+                <p>Became a Resident Assistant at UF, supporting Gators living on campus.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Item -->
 
         </div>
       </div>
@@ -219,7 +254,7 @@
 
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="projects" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0px">
@@ -232,68 +267,142 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-fullstack">Full-Stack Web Dev</li>
+            <li data-filter=".filter-fullstack">Full Stack Web</li>
             <li data-filter=".filter-ml">Machine Learning</li>
             <li data-filter=".filter-iot">IoT</li>
           </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fullstack">
-              <img src="assets/img/portfolio/Spot-A-Find.jpg" class="img-fluid"  alt="Alvin Wong">
+          <div class="row gy-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fullstack filter-ml">
+              <img src="assets\img\projects\visionmd.png" class="img-fluid" alt="Alvin Wong">
               <div class="portfolio-info">
-                <h4>Spot-A-Find</h4>
-                <p>Song recommendation and feedback site</p>
-                <a href="assets/img/portfolio/Spot-A-Find.jpg" title="Spot-A-Find" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/alvinwonggg/Spot-a-Find" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>Vision MD</h4>
+                <p>Open source tool for motor function analysis</p>
+                <a href="https://github.com/Database-Project-Group" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
-              <img src="assets/img/portfolio/Song-Classification.jpg" class="img-fluid" alt="Alvin Wong">
-              <div class="portfolio-info">
-                <h4>Song Genre Classification</h4>
-                <p>Deep CRNN to classify spectograms</p>
-                <a href="assets/img/portfolio/Song-Classification.jpg" title="Song Genre Classification" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/alvinwonggg/Genre-Classification-for-GTZAN-Dataset" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            
-
+          <div class="row gy-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fullstack">
-              <img src="assets\img\portfolio\LA Crime Investigator.jpg" class="img-fluid" alt="Alvin Wong">
+              <img src="assets\img\projects\community.png" class="img-fluid" alt="Alvin Wong">
               <div class="portfolio-info">
-                <h4>Los Angeles Crime Dashboard</h4>
-                <p>Tool to investigate LA crime trends</p>
-                <a href="assets\img\portfolio\LA Crime Investigator.jpg" title="Los Angeles Crime Dashboard" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <h4>It Takes a Community</h4>
+                <p>Connecting humans to communities</p>
                 <a href="https://github.com/Database-Project-Group" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fullstack">
-              <img src="assets\img\portfolio\Calorie-Counter-Buddy.jpg" class="img-fluid" alt="Alvin Wong">
+              <img src="assets/img/projects/chatbot.png" class="img-fluid"  alt="Alvin Wong">
               <div class="portfolio-info">
-                <h4>Calorie Counter Buddy</h4>
-                <p>Recipe sharing and calorie tracking site</p>
-                <a href="assets\img\portfolio\Calorie-Counter-Buddy.jpg" title="Calorie Counter Buddy" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/alvinwonggg/CalorieCounter-Buddy" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>UF Advisor Chatbot</h4>
+                <p>RAG Chatbot equipped with +100k documents</p>
+                <a href="https://github.com/alvinwonggg/Spot-a-Find" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
+              <img src="assets/img/projects/Song-Classification.jpg" class="img-fluid" alt="Alvin Wong">
+              <div class="portfolio-info">
+                <h4>Song Genre Classification</h4>
+                <p>Deep CRNN to classify spectograms</p>
+                <a href="https://github.com/alvinwonggg/Genre-Classification-for-GTZAN-Dataset" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-iot filter-ml">
-              <img src="assets\img\portfolio\IoT-Competition.jpg" class="img-fluid" alt="Alvin Wong">
+              <img src="assets\img\projects\IoT-Competition.jpg" class="img-fluid" alt="Alvin Wong">
               <div class="portfolio-info">
                 <h4>Nagamasou</h4>
                 <p>Tiny ML virtual pet</p>
-                <a href="assets\img\portfolio\IoT-Competition.jpg" title="Tiny ML Virtual Pet" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://www.youtube.com/watch?v=Ifhb8xKqb8c" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-fullstack">
+              <img src="assets\img\projects\Calorie-Counter-Buddy.jpg" class="img-fluid" alt="Alvin Wong">
+              <div class="portfolio-info">
+                <h4>Calorie Counter Buddy</h4>
+                <p>Recipe sharing and calorie tracking site</p>
+                <a href="https://github.com/alvinwonggg/CalorieCounter-Buddy" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
 
           </div><!-- End Portfolio Container -->
         </div>
       </div> <!-- End Portfolio Section -->
     </section>
+
+
+    <!-- Questions Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Let's get </span><strong>Personal</strong></h3>
+              <h3>😊</h3>
+              <p>
+                Get to know me beyond my professional life!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>What do I outside of school and work?</span></h3>
+                <div class="faq-content">
+                  <p>Trying to balance my life with physical challenges. Strength training, running and volleyball keep me grounded. 🏋️</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>Fun fact most people do not know about me?</span></h3>
+                <div class="faq-content">
+                  <p>I left home at 16 to pursue my education. Studied and lived in Canada, Germany, and the USA. 🌎</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>If I had a free day with no obligations, where would I go?</span></h3>
+                <div class="faq-content">
+                  <p>Anywhere sunny near water, I recently went snorkeling and diving in Ginnie Springs, I highly recommend! 🤿</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>What is my go to comfort meal?</span></h3>
+                <div class="faq-content">
+                  <p>Steamed pork and chive dumplings, brings back memories of my family's cooking. 🥟</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>What has sparked my curiosity recently?</span></h3>
+                <div class="faq-content">
+                  <p>Exploring LLM optimization with N:M structured pruning, quantization and knowledge distillation. 🤖</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
 
 
     <!-- Contact Section -->
@@ -310,12 +419,12 @@
       
             <div class="col-lg-2 d-flex">
               <div class="info-item d-flex align-items-center">
-                <a href="mailto:alvinwong1406@gmail.com">
+                <a href="mailto:alvinwong1403@gmail.com">
                   <i class="bi bi-envelope flex-shrink-0 me-3"></i>
                 </a>
                 <div>
                   <h3>Email</h3>
-                  <p><a href="mailto:alvinwong1406@gmail.com">alvinwong1403@gmail.com</a></p>
+                  <p><a href="mailto:alvinwong1403@gmail.com">alvinwong1403@gmail.com</a></p>
                 </div>
               </div>
             </div><!-- End Info Item -->

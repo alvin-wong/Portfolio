@@ -6,6 +6,17 @@
 * License: https://bootstrapmade.com/license/
 */
 
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').slice(1);
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
 (function() {
   "use strict";
 
@@ -78,7 +89,7 @@
       loop: true,
       typeSpeed: 50,
       backSpeed: 50,
-      backDelay: 750,
+      backDelay: 500,
     });
   }
 
@@ -204,10 +215,50 @@
     // Scroll to the next section if it exists
     if (nextSection) {
       window.scrollTo({
-        top: nextSection.offsetTop,
+        top: nextSection.offsetTop - 88,
         behavior: 'smooth'
       });
     }
   });
 
+})();
+
+// ————————————————————————————————————————————
+// NAV HIGHLIGHT ON SCROLL
+// ————————————————————————————————————————————
+(function() {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('main section[id]');
+  const headerOffset = document.querySelector('#header').offsetHeight + 10;
+
+  function onScroll() {
+    const scrollPos = window.pageYOffset;
+
+    sections.forEach(section => {
+      const top   = section.offsetTop - headerOffset;
+      const bottom= top + section.offsetHeight;
+      const id    = section.getAttribute('id');
+
+      if (scrollPos >= top && scrollPos < bottom) {
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            'active',
+            link.getAttribute('href') === `#${id}`
+          );
+        });
+      }
+    });
+  }
+
+  // run on load & on scroll
+  window.addEventListener('load',  onScroll);
+  document.addEventListener('scroll', onScroll);
+
+  // also update on click (so that clicking a link immediately gives it .active)
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
 })();

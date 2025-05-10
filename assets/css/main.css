@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0a090f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #0078ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -663,29 +663,39 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
   width: 100%;
-  min-height: calc(100vh);
+  min-height: 100vh;
   position: relative;
   padding: 60px 0;
   display: flex;
   align-items: center;
-  text-align: left;
-  justify-content: flex-start; /* Changed from center to flex-start */
+  justify-content: center;
 }
 
 .hero img {
   position: absolute;
-  object-fit: cover;
-  top: 0;
-  right: 0;
-  width: 52.6%; 
-  height: 100%; 
-  object-position: 40% 20%; 
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  transform: scale(1.25) translateY(10%) translateX(10%)!important;
   z-index: 1;
-  justify-content: center;
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  filter: saturate(1.3);
 }
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2); /* Adjust for darkness */
+  z-index: 1;
+}
+
 
 
 .hero:before {
@@ -697,6 +707,7 @@ section,
 }
 
 .hero .container {
+  margin-top: 100px;
   position: relative;
   z-index: 3;
 }
@@ -726,6 +737,73 @@ section,
     font-size: 20px;
   }
 }
+
+/*--------------------------------------------------------------
+# Navbar Section
+--------------------------------------------------------------*/
+.hero,
+#about,
+#resume,
+#projects,
+#contact {
+  scroll-margin-top: 5rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,1);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Dynamic underline on hover/active */
+.navbar .nav-links a {
+  position: relative;
+  padding-bottom: 0.25rem; /* keep some room for the line */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* hidden underline */
+.navbar .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+/* expand underline on hover or when link has .active */
+.navbar .nav-links a:hover::after,
+.navbar .nav-links a.active::after {
+  width: 100%;
+}
+
+
 
 /*--------------------------------------------------------------
 # About Section
@@ -864,35 +942,63 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
+  position: relative;       /* establish stacking context */
+  overflow: hidden;         /* clip the background */
   background-color: var(--surface-color);
-  box-shadow: 0px 5px 60px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 60px rgba(0, 0, 0, 0.1);
   padding: 60px 30px;
-  transition: all ease-in-out 0.3s;
+  transition: all .3s ease-in-out;
   border-radius: 18px;
   border-bottom: 5px solid var(--surface-color);
-  height: 100%;
+  height: 40vh;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+/* the background-image layer */
+.services .service-item::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform:
+    translate(-50%, -50%)
+    translate(var(--bg-x, 0), var(--bg-y, 0))
+    scale(var(--bg-scale, 1));
+  filter: brightness(calc(1 - var(--bg-darkness, 0)));
+  transition: transform .3s ease, filter .3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* make sure your content always sits above the background */
+.services .service-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services .service-item .icon {
   color: var(--contrast-color);
-  background: var(--accent-color);
-  margin: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50px;
+  background: var(--heading-color);
+  margin-bottom: 20px;
+  width: 64px; height: 64px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
   font-size: 28px;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out .3s;
 }
 
 .services .service-item h3 {
   font-weight: 700;
-  margin: 10px 0 15px 0;
+  margin: 10px 0 15px;
   font-size: 22px;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out .3s;
 }
 
 .services .service-item p {
@@ -901,14 +1007,39 @@ section,
   margin-bottom: 0;
 }
 
+.services .service-item .text-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 1;
+  
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 2) dark rounded‐rect behind just that text area */
+.services .service-item .text-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: -1;
+  padding: 10%;
+  transition: background-color .3s ease;
+}
+
+.services .service-item .text-overlay h3 {
+  color: #ffffff;
+}
+
 @media (min-width: 1365px) {
   .services .service-item:hover {
     transform: translateY(-10px);
     border-color: var(--accent-color);
-  }
-
-  .services .service-item:hover h3 {
-    color: var(--accent-color);
   }
 }
 
@@ -1009,6 +1140,16 @@ section,
 
 .portfolio .portfolio-item {
   position: relative;
+}
+
+.portfolio .portfolio-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 0.75rem; */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio .portfolio-item .portfolio-info {
@@ -1322,12 +1463,21 @@ section,
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 2px 0;
+  color: var(--heading-color);
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
+  color: var(--heading-color);
+}
+
+.contact .info-item a {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: var(--heading-color);
 }
 
 .contact .info-item:hover i {
