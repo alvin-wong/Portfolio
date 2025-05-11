@@ -672,6 +672,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero img {
@@ -728,7 +729,7 @@ section,
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero h2 {
     font-size: 32px;
   }
@@ -736,9 +737,47 @@ section,
   .hero p {
     font-size: 20px;
   }
+
+  .hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: auto;
+    min-width: auto;
+    min-height: 100%;
+    object-fit: cover;
+    transform: scale(0.92) translateX(-30%) translateY(5%)!important;
+    z-index: 1;
+    filter: saturate(1.3);
+  }
 }
 
-/*--------------------------------------------------------------
+@media (max-width: 767px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: auto;
+    min-width: auto;
+    min-height: 100%;
+    object-fit: cover;
+    transform: scale(0.92) translateX(-37.5%) translateY(5%)!important;
+    z-index: 1;
+    filter: saturate(1.3);
+  }
+}
+
+/*-------------------------------------------------------------
 # Navbar Section
 --------------------------------------------------------------*/
 .hero,
@@ -802,6 +841,50 @@ section,
 .navbar .nav-links a.active::after {
   width: 100%;
 }
+
+/* 1) Hamburger styling (hidden by default) */
+.navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+.navbar .hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* 2) At small widths, hide the links, show the button */
+@media (max-width: 768px) {
+  /* hide the nav links off‑canvas by default */
+  .navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    width: 200px;      /* adjust as you like */
+    padding: 1rem;
+  }
+  /* show the hamburger */
+  .navbar .hamburger {
+    display: flex;
+  }
+  /* when .nav-links has .open, turn it back on */
+  .navbar .nav-links.open {
+    display: flex;
+  }
+  /* spacing for stacked items */
+  .navbar .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
 
 
 
